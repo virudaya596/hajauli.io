@@ -9,7 +9,7 @@ const firebaseConfig = {
 };
 
 // initialize firebase 
-firebase.initializeApp (firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 // reference your database
 var contactFormDB = firebase.database().ref("contactFormtest");

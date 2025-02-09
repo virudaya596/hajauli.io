@@ -1,69 +1,178 @@
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: linear-gradient(to right, #e66465, #9198e5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background: linear-gradient(to right, #3FB5CF, #AEDEE8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  margin: 0;
+}
+
+.form-container {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.alert {
+  display: none;
+  width: 94.5%;
+  color: aliceblue;
+  background-color: #45a049;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #3FB5CF;
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  color: #3FB5CF;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-container input,  
+.form-container textarea {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 94.5%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #3FB5CF;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #3FB5CF;
+}
+
+.form-container select {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 99.5%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #3FB5CF;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #3FB5CF;
+}
+
+.form-container input[type="file"]::-webkit-file-upload-button {
+  display: none;
+}
+
+.form-container input[type="file"]{
+  border: none;
   
-  .form-container {
-    background: white;
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
-  
-  input, textarea {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 94.5%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-  
-  textarea {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    resize: none;
-    height: 100px;
-  }
-  
-  button {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 100%;
-    padding: 12px;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  button:hover {
-    background: #45a049;
-  }
-  
-  button ion-icon {
-      margin-bottom: -2px;
-  }
-  
+}
+
+.custom-file-upload {
+  justify-content: center;
+  text-align: center;
+  border: none;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.picture {
+  padding: 3px;
+  border: 1px solid #3FB5CF;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+  color: #AEDEE8;
+}
+
+.form-container textarea {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  resize: none;
+  height: 100px;
+}
+
+
+
+
+.form-container button {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #3FB5CF, #AEDEE8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.form-container button:hover {
+  background: linear-gradient(to right, #3FB5CF98, #AEDEE898);
+  transition: 0.3s ease-in-out;
+}
+
+.form-container ion-icon {
+    margin-bottom: -2px;
+}
+
+.form-container .picture ion-icon {
+  font-size: 80px;
+}
+/* Success page */
+.success {
+  display: none;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.success h1 {
+  margin-bottom: -10px;
+  color: #3FB5CF;
+}
+.success p {
+  font-size: smaller;
+  color: #AEDEE8;
+}
+
+.success img {
+  width: 100%;
+}
+
+.success button {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #3FB5CF, #AEDEE8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.success button:hover {
+  background: linear-gradient(to right, #3FB5CF98, #AEDEE898);
+  transition: 0.3s ease-in-out;
+  color: #333;
+}
+.success button ion-icon {
+  margin-bottom: -2px;
+}

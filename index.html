@@ -3,34 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Firebase Form</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbm9Sd2J5OHgtbzRnVHJxRDNtUzhvaWJhNW8zZ3xBQ3Jtc0tuYWd0NXJEUkpDVFR4WXFyNDVXc2RRMEdSWjdPcVVzYVhkRWpLUDFtYnRYODdXZEZnakJXanhQZjVzUFE2elAydzRQeTFSWC1MX3lVQzBlZGxRNkhrVUExX1BCbjBLU1JMVFpjcGstX1RlYWZ6S0M0RQ&q=https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Ffirebase%2F7.14.1-0%2Ffirebase.js&v=RAWHXRTKTHw"></script>
-    <script defer src="script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Firebase Form</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="form-container">
         <h2>Submit Your Details</h2>
-    <form id="userForm">
-        <label>First Name:</label>
-        <input type="text" id="firstName" placeholder="Falana" required><br>
+    <form action="" id="contactForm">
 
-        <label>Last Name:</label>
-        <input type="text" id="lastName" placeholder="Kumar" required><br>
+        <div class="picture">
+            <label for="pic" class="custom-file-upload" ><ion-icon name="cloud-upload"></ion-icon><br> Tap to Upload!</label>
+        <input type="file" name="pic" id="pic" />
+        </div>
 
-        <label>Description:</label>
-        <textarea id="description" placeholder="Who I am?... Whatever....???" required></textarea><br>
+        <label><ion-icon name="person-circle-sharp"></ion-icon> First Name:</label>
+        <input type="text" id="fName" placeholder="Falana" required><br>
 
-        <label>Email:</label>
-        <input type="email" id="email" placeholder="example@domain.com" required><br>
+        <label><ion-icon name="person-circle-outline"></ion-icon> Last Name:</label>
+        <input type="text" id="lName" placeholder="Kumar" required><br>
 
-        <label>Mobile No:</label>
-        <input type="tel" id="mobile" placeholder="+91 XXXXX XXXXX" required><br>
+        <label for="gender"><ion-icon name="transgender"></ion-icon> Gender:</label>
+        <select id="gender" required>
+            <option id="def" value="" disabled selected>Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <label><ion-icon name="mail"></ion-icon> Email:</label>
+        <input type="email" id="emailId" placeholder="example@domain.com" required><br>
+
+        <label><ion-icon name="call"></ion-icon> Mobile No:</label>
+        <input type="tel" id="mobileNo" placeholder="+91 XXXXX XXXXX" required><br>
+
+        <label><ion-icon name="newspaper"></ion-icon> About :</label>
+        <textarea id="about" placeholder="Who I am?... Whatever....???" required></textarea><br>
 
         <button type="submit">Submit <ion-icon name="send"></ion-icon></button>
     </form>
     </div>
+
+    <!-- Submitted Successfully -->
+     <div class="success">
+        <img src="./tick.gif" alt="Success">
+        <h1>Submission Successful</h1>
+        <p>Your form has been submitted successfully!</p>
+        <button class="ref-but" onclick="window.location.href='./index.html'" ><ion-icon name="refresh-sharp"></ion-icon> Refresh</button>
+     </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script type="module" src="./mail.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </html>
